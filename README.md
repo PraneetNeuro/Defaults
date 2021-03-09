@@ -5,5 +5,5 @@ A macOS app written in SwiftUI to tinker with Apple's UserDefaults system, makes
 Start by typing the bundle identifier to view a list of available keys which you can click on to view the type of value, current value and set a new value.
 
 # Screenshots
-![Home](https://github.com/PraneetNeuro/Defaults/blob/main/snaps/home.png?raw=true)
+![Home](https://github.com/PraneetNeuro/Defaults/blob/main/snaps/home1.png?raw=true)
 ![Setting a new value](https://github.com/PraneetNeuro/Defaults/blob/main/snaps/setvalue.png?raw=true)
