@@ -16,7 +16,16 @@ struct ContentView: View {
     @State var bundleInContext: String = ""
     @State var valueToSet: String = ""
     @State var typeInContext: String = ""
+    @State var domains: [String] = []
     var body: some View {
+        HStack {
+            List(domains, id: \.self) { domain in
+                Text(domain)
+                    .onTapGesture {
+                        bundleID = domain
+                    }
+            }.listStyle(SidebarListStyle())
+            .frame(minWidth: 350)
         VStack {
             TextField("Bundle identifier", text: $bundleID)
                 .textFieldStyle(PlainTextFieldStyle())
@@ -53,32 +62,36 @@ struct ContentView: View {
                 }
             }
         }.frame(width: 400, height: 500, alignment: .center)
-        .popover(isPresented: $isValuePresented) {
-            VStack {
-                ScrollView {
-                    Text("Key: \(keyInContext)")
-                        .bold()
-                    Text(typeInContext)
-                    Text("Current value: \(String(describing: defaults[keyInContext]).replacingOccurrences(of: "Optional", with: ""))")
-                        .lineLimit(3)
-                        .padding(.horizontal)
-                    Text("Set value")
-                        .bold()
-                    Text("Warning: Setting an incomptaible value might break the system")
-                        .foregroundColor(.red)
-                    TextField("Value", text: $valueToSet)
-                        .padding(.horizontal)
-                    Button("Set Value") {
-                        setValueForKey(key: keyInContext, value: valueToSet, bundleID: bundleInContext, type: typeInContext)
-                        valueToSet = ""
-                    }
-                }.padding(.top)
-            }.frame(width: 300, height: 300, alignment: .center)
-            .onAppear {
-                typeInContext = readTypeOfKey(key: keyInContext, bundleID: bundleInContext)
-            }
-        }
     }
+    .onAppear {
+    domains = getAllDomains()
+    }
+    .popover(isPresented: $isValuePresented) {
+    VStack {
+    ScrollView {
+    Text("Key: \(keyInContext)")
+    .bold()
+    Text(typeInContext)
+    Text("Current value: \(String(describing: defaults[keyInContext]).replacingOccurrences(of: "Optional", with: ""))")
+    .lineLimit(3)
+    .padding(.horizontal)
+    Text("Set value")
+    .bold()
+    Text("Warning: Setting an incomptaible value might break the system")
+    .foregroundColor(.red)
+    TextField("Value", text: $valueToSet)
+    .padding(.horizontal)
+    Button("Set Value") {
+    setValueForKey(key: keyInContext, value: valueToSet, bundleID: bundleInContext, type: typeInContext)
+    valueToSet = ""
+    }
+    }.padding(.top)
+    }.frame(width: 300, height: 300, alignment: .center)
+    .onAppear {
+    typeInContext = readTypeOfKey(key: keyInContext, bundleID: bundleInContext)
+    }
+    }
+}
 }
 
 extension NSTextField {

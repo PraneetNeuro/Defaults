@@ -22,6 +22,11 @@ func defaultsProcess(args: [String]) -> Data {
     return pipeForReadingOutput.fileHandleForReading.readDataToEndOfFile()
 }
 
+func getAllDomains() -> [String] {
+    let domainsData = defaultsProcess(args: ["domains"])
+    return String(data: domainsData, encoding: .utf8)?.split(separator: ",").map({ String($0).trimmingCharacters(in: .whitespacesAndNewlines) }) ?? []
+}
+
 func readDefaultsFromBundleID(bundleID: String) -> [String: AnyObject]? {
     let defaultsXML = defaultsProcess(args: ["export", bundleID, "-"])
     let defaultsDict = XML_Dict(xmlData: defaultsXML)
