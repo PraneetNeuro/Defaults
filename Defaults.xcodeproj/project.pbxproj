@@ -11,6 +11,8 @@
 		B705B8A325F7AE470030D13F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705B8A225F7AE470030D13F /* ContentView.swift */; };
 		B705B8A525F7AE480030D13F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B705B8A425F7AE480030D13F /* Assets.xcassets */; };
 		B705B8A825F7AE480030D13F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B705B8A725F7AE480030D13F /* Preview Assets.xcassets */; };
+		B705B8B225F7AE720030D13F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705B8B125F7AE720030D13F /* Defaults.swift */; };
+		B705B8B825F7E3970030D13F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705B8B725F7E3970030D13F /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		B705B8A725F7AE480030D13F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B705B8A925F7AE480030D13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B705B8AA25F7AE480030D13F /* Defaults.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Defaults.entitlements; sourceTree = "<group>"; };
+		B705B8B125F7AE720030D13F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		B705B8B725F7E3970030D13F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				B705B8A925F7AE480030D13F /* Info.plist */,
 				B705B8AA25F7AE480030D13F /* Defaults.entitlements */,
 				B705B8A625F7AE480030D13F /* Preview Content */,
+				B705B8B125F7AE720030D13F /* Defaults.swift */,
+				B705B8B725F7E3970030D13F /* Utils.swift */,
 			);
 			path = Defaults;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B705B8B825F7E3970030D13F /* Utils.swift in Sources */,
+				B705B8B225F7AE720030D13F /* Defaults.swift in Sources */,
 				B705B8A325F7AE470030D13F /* ContentView.swift in Sources */,
 				B705B8A125F7AE470030D13F /* DefaultsApp.swift in Sources */,
 			);
